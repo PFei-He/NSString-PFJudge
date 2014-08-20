@@ -41,7 +41,7 @@
 - (NSString *)matchesEmail:(NSString *)string;
 
 /**
- *  @brief 配置url
+ *  @brief 匹配url
  */
 - (NSString *)matchesURL:(NSString *)string;
 

@@ -10,6 +10,7 @@
 
 @implementation NSString (PFJudge)
 
+//判断是否QQ号码
 - (BOOL)isQQ
 {
     NSString *emailRegex = @"(^[0-9]*$)";
@@ -17,6 +18,7 @@
     return [emailTest evaluateWithObject:self];
 }
 
+//判断是否邮箱地址
 - (BOOL)isEmail
 {
 	NSString *regex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
@@ -25,6 +27,7 @@
 	return [pred evaluateWithObject:self];
 }
 
+//判断是否url
 - (BOOL)isURL
 {
     NSString *regex = @"(http[s]{0,1}|ftp):\\/\\/([\\w-]+\\.)+[\\w-]+(\\/[\\w- .\\/?%&=]*)?";
@@ -33,6 +36,7 @@
 	return [pred evaluateWithObject:self];
 }
 
+//判断是否手机号码
 - (BOOL)isTelephone
 {
     NSString *MOBILE = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";
@@ -53,6 +57,7 @@
     [regextestphs evaluateWithObject:self];
 }
 
+//判断是否ip地址
 - (BOOL)isIPAddress
 {
 	NSArray *components = [self componentsSeparatedByString:@"."];
@@ -83,6 +88,7 @@
 	return NO;
 }
 
+//匹配邮箱地址
 - (NSString *)matchesEmail:(NSString *)string
 {
     NSError *error;
@@ -98,6 +104,7 @@
     return matchesStr;
 }
 
+//匹配url
 - (NSString *)matchesURL:(NSString *)string
 {
     NSError *error;
